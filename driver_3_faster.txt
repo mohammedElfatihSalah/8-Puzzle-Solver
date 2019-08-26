@@ -1,0 +1,11 @@
+-implement bfs and dfs the graph version
+-implement A star the tree version
+-takes input from terminal
+ as pyhton driver_3_faster.py search instance.
+-  search = bfs , dfs , ast.
+- instance is seperated 1,2,3,..8
+
+- it outputs the result to txt file name output.txt
+
+note:
+
