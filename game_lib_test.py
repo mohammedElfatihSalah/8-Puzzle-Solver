@@ -8,3 +8,7 @@ class PuzzleTest(unittest.TestCase):
         puzzle = game_lib.Puzzle()
         tiles = puzzle.get_tiles()
         self.assertEqual(tiles, [])
+
+
+if __name__ == "__main__":
+    unittest.main()
