@@ -1,16 +1,16 @@
 import unittest
-import game_lib
+import puzzle_lib
 
 
 class PuzzleTest(unittest.TestCase):
 
     def test_init_tiles(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         tiles = puzzle.get_tiles()
         self.assertEqual(tiles, [[0, 1, 2], [3, 4, 5], [6, 7, 8]])
 
     def test_move_up(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         puzzle.set_tiles([[1, 2, 3], [0, 4, 5], [6, 7, 8]])
         number, (x, y), (x_new, y_new) = puzzle.move(2, 0)
         self.assertEqual(number, 6)
@@ -18,7 +18,7 @@ class PuzzleTest(unittest.TestCase):
         self.assertEqual(y_new, 0)
 
     def test_move_up_left_down(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         puzzle.set_tiles([[1, 2, 3], [0, 4, 5], [6, 7, 8]])
         _ = puzzle.move(2, 0)
         _ = puzzle.move(2, 1)
@@ -29,14 +29,14 @@ class PuzzleTest(unittest.TestCase):
         self.assertEqual(puzzle.get_tiles(), [[1, 2, 3], [6, 0, 5], [7, 4, 8]])
 
     def test_move_right(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         puzzle.set_tiles([[1, 2, 3], [4, 0, 5], [6, 7, 8]])
         number, (x, y), (x_new, y_new) = puzzle.move(1, 0)
         self.assertEqual((x_new, y_new), (1, 1))
         self.assertEqual(puzzle.get_tiles(), [[1, 2, 3], [0, 4, 5], [6, 7, 8]])
 
     def test_move_none_movable_tiles(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         puzzle.set_tiles([[1, 2, 3], [0, 4, 5], [6, 7, 8]])
 
         number, (x, y), (x_new, y_new) = puzzle.move(0, 1)
@@ -49,7 +49,7 @@ class PuzzleTest(unittest.TestCase):
         self.assertEqual((x, y), (x_new, y_new))
 
     def test_is_empty(self):
-        puzzle = game_lib.Puzzle()
+        puzzle = puzzle_lib.Puzzle()
         puzzle.set_tiles([[1, 2, 3], [0, 4, 5], [6, 7, 8]])
         _ = puzzle.move(2, 0)
         _ = puzzle.move(2, 1)
