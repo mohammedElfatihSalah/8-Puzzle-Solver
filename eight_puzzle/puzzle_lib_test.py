@@ -1,5 +1,5 @@
 import unittest
-import puzzle_lib
+from eight_puzzle import puzzle_lib
 
 
 class PuzzleTest(unittest.TestCase):

@@ -1,5 +1,5 @@
 import dataclasses
-from typing import Optional, List, Any
+from typing import Optional, Any
 import queue
 
 

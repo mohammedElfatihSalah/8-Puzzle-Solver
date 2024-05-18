@@ -1,5 +1,5 @@
 import unittest
-import solver_lib
+from eight_puzzle import solver_lib
 
 
 class NodeTest(unittest.TestCase):

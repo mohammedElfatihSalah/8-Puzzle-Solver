@@ -1,5 +1,5 @@
 import unittest
-import renderer_lib
+from eight_puzzle import renderer_lib
 
 
 class RendererTest(unittest.TestCase):

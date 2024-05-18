@@ -1,7 +1,7 @@
 import renderer_lib
-import solver_lib
-import puzzle_lib
-import controller as controller_lib
+from eight_puzzle import solver_lib
+from eight_puzzle import puzzle_lib
+from eight_puzzle import controller as controller_lib
 import pygame
 from pygame.locals import QUIT
 import sys
