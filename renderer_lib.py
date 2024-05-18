@@ -24,10 +24,6 @@ class Renderer:
     def __init__(self, info):
         self.info = info
         self.clock = pygame.time.Clock()
-        self.surface = pygame.display.set_mode(
-            (self.info.window_width, self.info.window_height)
-        )
-        self.surface.fill(self.info.bg_color)
 
         # Create Rect for `Solve` button
         tile_size = self.info.tile_size + self.info.gap_size
@@ -37,7 +33,12 @@ class Renderer:
         self.solve_button_rect = pygame.Rect(
             x, y, self.info.button_width, self.info.button_height
         )
-        pygame.display.update()
+
+    def init_display(self):
+        self.surface = pygame.display.set_mode(
+            (self.info.window_width, self.info.window_height)
+        )
+        self.surface.fill(self.info.bg_color)
 
     def is_outside(self, x, y) -> bool:
         relative_x, relative_y = x - self.info.margin[0], y - self.info.margin[1]
