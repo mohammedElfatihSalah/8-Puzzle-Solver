@@ -1,5 +1,4 @@
 import dataclasses
-import math
 import pygame
 
 NUM_COLS = 3
