@@ -7,7 +7,7 @@ class PuzzleTest(unittest.TestCase):
     def test_init_tiles(self):
         puzzle = puzzle_lib.Puzzle()
         tiles = puzzle.get_tiles()
-        self.assertEqual(tiles, [[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+        self.assertEqual(tiles, [[1, 2, 0], [3, 4, 5], [6, 7, 8]])
 
     def test_move_up(self):
         puzzle = puzzle_lib.Puzzle()
