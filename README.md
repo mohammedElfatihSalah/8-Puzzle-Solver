@@ -12,21 +12,27 @@ Currently the following solvers are supported:
 
 Pull the code to your local directory. You can use the following command
 
-`git clone https://github.com/mohammedElfatihSalah/8-Puzzle-Solver.git`
+```
+git clone https://github.com/mohammedElfatihSalah/8-Puzzle-Solver.git
+```
 
 Then install dependencies (only pygame for now) :
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 Finally you can run the program using the following command:
 
-`python main.py`
+```
+python main.py
+```
 
 Enjoy :)
 
 # Future Features & Collaborations:
 - Implement radio buttons to select between different solvers.
-- Implement hint feature to show the user the next move only
-- Add a pause feature so the user could stop solvers and continue to solve by themselves.
+- Implement a hint feature to show the user the next move only
+- Add a pause feature so the user can stop solvers and continue to solve by themselves.
 
 
