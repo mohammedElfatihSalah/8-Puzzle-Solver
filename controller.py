@@ -19,7 +19,7 @@ class Controller:
                         state.append(val)
 
                 state = tuple(state)
-                result = self.solver.solve(state)
+                result = self.solver.solve(state, "a*")
                 for action in result:
                     number, (x, y), (new_x, new_y) = self.puzzle.move_by_direction(
                         action

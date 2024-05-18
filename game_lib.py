@@ -60,7 +60,6 @@ class Puzzle:
             raise ValueError()
 
     def move_by_direction(self, direction):
-        print(direction)
         x, y = self._empty_tile_pos
         dx, dy = self._convert_action_to_delta(direction)
 

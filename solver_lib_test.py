@@ -60,16 +60,46 @@ class NodeTest(unittest.TestCase):
 
 class SolverTest(unittest.TestCase):
 
-    def test_solve(self):
+    def test_solve_depth_first_search(self):
         solver = solver_lib.Solver()
 
         state = (1, 0, 2, 3, 4, 5, 6, 7, 8)
-        result = solver.solve(state)
+        result = solver.solve(state, "dfs")
         self.assertEqual(result, ["left"])
 
         state = (1, 2, 0, 3, 4, 5, 6, 7, 8)
-        result = solver.solve(state)
+        result = solver.solve(state, "dfs")
         self.assertEqual(result, ["left", "left"])
+
+    def test_manhattan_distance(self):
+        solver = solver_lib.Solver()
+
+        state = (1, 0, 2, 3, 4, 5, 6, 7, 8)
+        result = solver._manhattan_distance(state)
+        self.assertEqual(result, 2)
+
+        state = (1, 4, 2, 3, 0, 5, 6, 7, 8)
+        result = solver._manhattan_distance(state)
+        self.assertEqual(result, 4)
+
+        state = (1, 4, 2, 3, 0, 5, 6, 8, 7)
+        result = solver._manhattan_distance(state)
+        self.assertEqual(result, 6)
+
+        state = (1, 4, 2, 3, 5, 0, 6, 8, 7)
+        result = solver._manhattan_distance(state)
+        self.assertEqual(result, 8)
+
+    def test_solve_a_star(self):
+        solver = solver_lib.Solver()
+
+        state = (1, 0, 2, 3, 4, 5, 6, 7, 8)
+        result = solver.solve(state, "a*")
+        self.assertEqual(result, ["left"])
+
+        state = (1, 2, 5, 3, 4, 0, 6, 7, 8)
+        result = solver.solve(state, "a*")
+        self.assertEqual(result, ["up", "left", "left"])
 
 
 if __name__ == "__main__":
